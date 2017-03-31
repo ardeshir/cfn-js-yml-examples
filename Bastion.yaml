@@ -1,1 +1,53 @@
-null
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Univrs.io SSH Bastion
+Parameters:
+  VPC:
+    Description: The Main Bastion
+    Type: AWS::EC2::VPC::Id
+  Subnet:
+    Description: A Public subnet VPC
+    Type: AWS::EC2::Subnet::Id
+  KeyPair:
+    Description: A SSH Key Pair.
+    Type: AWS::EC2::KeyPair::KeyName
+Mappings:
+  RegionMap:
+    us-east-1:
+      AMI: ami-c481fad3
+    eu-west-1:
+      AMI: ami-bff32ccc
+Resources:
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !FindInMap [RegionMap, !Ref 'AWS::Region', AMI]
+      InstanceType: t2.micro
+      NetworkInterfaces:
+      - AssociatePublicIpAddress: 'true'
+        DeviceIndex: '0'
+        GroupSet:
+        - !Ref 'SecurityGroup'
+        SubnetId: !Ref 'Subnet'
+      Tags:
+      - Key: Name
+        Value: ssh-bastion-host
+      KeyName: !Ref 'KeyPair'
+  ElasticIP:
+    Type: AWS::EC2::EIP
+    Properties:
+      InstanceId: !Ref 'EC2Instance'
+      Domain: vpc
+  SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: ssh-bastion-host
+      VpcId: !Ref 'VPC'
+      SecurityGroupIngress:
+      - CidrIp: 0.0.0.0/0
+        FromPort: 22
+        IpProtocol: tcp
+        ToPort: 22
+Outputs:
+  SSHBastionHost:
+    Description: Public IP address of SSH bastion host.
+    Value: !Ref 'ElasticIP'
