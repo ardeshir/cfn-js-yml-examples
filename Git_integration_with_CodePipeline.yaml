@@ -1,0 +1,882 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 3rd party git integration with CodePipeline
+Metadata:
+  LICENSE: Copyright 2016 Amazon Web Services, Inc. or its affiliates. All Rights
+    Reserved. This file is licensed to you under the AWS Customer Agreement (the "License").
+    You may not use this file except in compliance with the License. A copy of the
+    License is located at http://aws.amazon.com/agreement/ . This file is distributed
+    on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, express or
+    implied. See the License for the specific language governing permissions and limitations
+    under the License.
+  AWS::CloudFormation::Designer:
+    a7d4fec0-0a58-48ce-8e03-46dc4a8222bf:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 270
+        y: 90
+      z: 1
+      embeds: []
+    a279705b-a0eb-4ba4-9631-3a185babbe3c:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 270
+        y: 210
+      z: 1
+      embeds: []
+    91161c33-fa9d-4f36-9523-f00ae474400a:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 60
+        y: 300
+      z: 1
+      embeds: []
+      isrelatedto:
+      - a279705b-a0eb-4ba4-9631-3a185babbe3c
+    04b9bad4-4a9c-4cfd-8575-bee7a6466174:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 390
+        y: 90
+      z: 1
+      embeds: []
+      isrelatedto:
+      - 91161c33-fa9d-4f36-9523-f00ae474400a
+    786e7147-b889-4e87-9226-181ce5a3efef:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 390
+        y: 210
+      z: 1
+      embeds: []
+    326356aa-412d-4efa-a1cd-3f23e203a894:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 180
+        y: 330
+      z: 1
+      embeds: []
+      isrelatedto:
+      - a279705b-a0eb-4ba4-9631-3a185babbe3c
+      - 786e7147-b889-4e87-9226-181ce5a3efef
+    1b85c990-4413-4502-a8f7-693e70a42ec7:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 300
+        y: 330
+      z: 1
+      embeds: []
+      isrelatedto:
+      - 326356aa-412d-4efa-a1cd-3f23e203a894
+    96e4ba03-b237-4d0d-ba8a-d1a45657db18:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 420
+        y: 330
+      z: 1
+      embeds: []
+      isrelatedto:
+      - 1b85c990-4413-4502-a8f7-693e70a42ec7
+      - 04b9bad4-4a9c-4cfd-8575-bee7a6466174
+    f91ba1ed-e63d-4749-93e8-0d1b17aa2adf:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 60
+        y: 420
+      z: 1
+      embeds: []
+      isrelatedto:
+      - 786e7147-b889-4e87-9226-181ce5a3efef
+      - a279705b-a0eb-4ba4-9631-3a185babbe3c
+    a3596ba3-f36d-4774-aaf7-7cde3426b9e1:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 180
+        y: 450
+      z: 1
+      embeds: []
+      isrelatedto:
+      - f91ba1ed-e63d-4749-93e8-0d1b17aa2adf
+    9b3173bb-0627-4c9a-ab38-f8b952df6794:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 300
+        y: 450
+      z: 1
+      embeds: []
+      dependson:
+      - 786e7147-b889-4e87-9226-181ce5a3efef
+      - a279705b-a0eb-4ba4-9631-3a185babbe3c
+      isrelatedto:
+      - a3596ba3-f36d-4774-aaf7-7cde3426b9e1
+      - 786e7147-b889-4e87-9226-181ce5a3efef
+      - a279705b-a0eb-4ba4-9631-3a185babbe3c
+    97f9b0d1-59a1-4c3a-9071-d4266dfb6740:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 420
+        y: 450
+      z: 1
+      embeds: []
+      isrelatedto:
+      - 786e7147-b889-4e87-9226-181ce5a3efef
+    6854e4ee-5b0c-4fb8-a160-134c3117dc46:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 510
+        y: 90
+      z: 1
+      embeds: []
+      isrelatedto:
+      - 97f9b0d1-59a1-4c3a-9071-d4266dfb6740
+    cb9b9866-b8dc-4d63-8c0f-2ddc8ea74c72:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 510
+        y: 210
+      z: 1
+      embeds: []
+      isrelatedto:
+      - 6854e4ee-5b0c-4fb8-a160-134c3117dc46
+      - 786e7147-b889-4e87-9226-181ce5a3efef
+      - a7d4fec0-0a58-48ce-8e03-46dc4a8222bf
+    3e332380-9ce6-4062-8138-85df66921e79:
+      size:
+        width: 150
+        height: 150
+      position:
+        x: 60
+        y: 90
+      z: 1
+      embeds: []
+      isrelatedto:
+      - 96e4ba03-b237-4d0d-ba8a-d1a45657db18
+      - 1b85c990-4413-4502-a8f7-693e70a42ec7
+      - 786e7147-b889-4e87-9226-181ce5a3efef
+      - cb9b9866-b8dc-4d63-8c0f-2ddc8ea74c72
+      - 04b9bad4-4a9c-4cfd-8575-bee7a6466174
+    2682c94b-1100-4f6a-adcc-b0f3d86cd5f8:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 540
+        y: 330
+      z: 1
+      embeds: []
+      isassociatedwith:
+      - 3e332380-9ce6-4062-8138-85df66921e79
+    949e4fd0-d5f0-48ee-8e77-2df917562d92:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 540
+        y: 450
+      z: 1
+      embeds: []
+      isassociatedwith:
+      - 2682c94b-1100-4f6a-adcc-b0f3d86cd5f8
+      - 3e332380-9ce6-4062-8138-85df66921e79
+      isrelatedto:
+      - a279705b-a0eb-4ba4-9631-3a185babbe3c
+Parameters:
+  OutputBucketName:
+    Description: 'OPTIONAL: Bucket Name where the zip file output should be placed,
+      if left blank a bucket name will be automatically generated.'
+    Type: String
+    Default: ''
+  AllowedIps:
+    Description: gitpull method only. Comma seperated list of IP CIDR blocks for source
+      IP authentication. The BitBucket Cloud IP ranges are provided as defaults.
+    Type: String
+    Default: 131.103.20.160/27,165.254.145.0/26,104.192.143.0/24
+  ApiSecret:
+    Description: 'gitpull method only. WebHook Secrets for use with GitHub Enterprise
+      and GitLab. If a secret is matched IP range authentication is bypassed. Cannot
+      contain: , \ "'
+    Type: String
+    Default: ''
+    NoEcho: 'true'
+  GitToken:
+    NoEcho: 'true'
+    Description: zipdl method only. Personal access token, needed for GitHub Enterprise
+      and GitLab
+    Type: String
+    Default: ''
+    ConstraintDescription: this token must be generated from the git server/provider
+  OauthKey:
+    Description: zipdl method only. OAuth2 Key needed for BitBucket
+    Type: String
+    Default: ''
+    ConstraintDescription: this key must be generated from the git server/provider
+  OauthSecret:
+    NoEcho: 'true'
+    Description: zipdl method only. OAuth2 Secret needed for BitBucket
+    Type: String
+    Default: ''
+    ConstraintDescription: this secret must be generated from the git server/provider
+Mappings:
+  LambdaBuckets:
+    us-east-1:
+      Name: git-to-codepipeline-us-east-1
+    us-west-2:
+      Name: git-to-codepipeline-us-west-2
+    eu-west-1:
+      Name: git-to-codepipeline-eu-west-1
+Conditions:
+  UseAllowedIps: !Not [!Equals [!Ref 'AllowedIps', '']]
+  UseApiSecret: !Not [!Equals [!Ref 'ApiSecret', '']]
+  UseGitToken: !Not [!Equals [!Ref 'GitToken', '']]
+  UseOauthKey: !Not [!Equals [!Ref 'OauthKey', '']]
+  UseOauthSecret: !Not [!Equals [!Ref 'OauthSecret', '']]
+  AutoGenOutputBucketName: !Not [!Equals [!Ref 'OutputBucketName', '']]
+Resources:
+  KeyBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      Tags: []
+    Metadata:
+      AWS::CloudFormation::Designer:
+        id: 786e7147-b889-4e87-9226-181ce5a3efef
+  OutputBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !If [AutoGenOutputBucketName, !Ref 'OutputBucketName', !Ref 'AWS::NoValue']
+      VersioningConfiguration:
+        Status: Enabled
+      Tags: []
+    Metadata:
+      AWS::CloudFormation::Designer:
+        id: a279705b-a0eb-4ba4-9631-3a185babbe3c
+  KMSKey:
+    Type: AWS::KMS::Key
+    Properties:
+      Description: git CodePipeline integration, bucket to store ssh keys
+      KeyPolicy:
+        Version: '2012-10-17'
+        Statement:
+        - Sid: Allow access for Key Administrators
+          Effect: Allow
+          Principal:
+            AWS:
+            - !Join ['', ['arn:aws:iam::', !Ref 'AWS::AccountId', ':root']]
+          Action:
+          - kms:Create*
+          - kms:Describe*
+          - kms:Enable*
+          - kms:List*
+          - kms:Put*
+          - kms:Update*
+          - kms:Revoke*
+          - kms:Disable*
+          - kms:Get*
+          - kms:Delete*
+          - kms:ScheduleKeyDeletion
+          - kms:CancelKeyDeletion
+          Resource: '*'
+        - Sid: Allow use of the key
+          Effect: Allow
+          Principal:
+            AWS:
+            - !Join ['', ['arn:aws:iam::', !Ref 'AWS::AccountId', ':root']]
+          Action:
+          - kms:Encrypt
+          - kms:Decrypt
+          - kms:ReEncrypt*
+          - kms:GenerateDataKey*
+          - kms:DescribeKey
+          Resource: '*'
+        - Sid: Allow attachment of persistent resources
+          Effect: Allow
+          Principal:
+            AWS:
+            - !Join ['', ['arn:aws:iam::', !Ref 'AWS::AccountId', ':root']]
+          Action:
+          - kms:CreateGrant
+          - kms:ListGrants
+          - kms:RevokeGrant
+          Resource: '*'
+          Condition:
+            Bool:
+              kms:GrantIsForAWSResource: true
+    Metadata:
+      AWS::CloudFormation::Designer:
+        id: a7d4fec0-0a58-48ce-8e03-46dc4a8222bf
+  CreateSSHKeyRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service: lambda.amazonaws.com
+          Action: sts:AssumeRole
+      Path: /
+      Policies:
+      - PolicyName: git2cp-sshkeygen
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action:
+            - s3:GetObject
+            Resource:
+            - !Join ['', ['arn:aws:s3:::', !Ref 'KeyBucket', /crypto.zip]]
+          - Effect: Allow
+            Action:
+            - s3:PutObject
+            Resource:
+            - !Join ['', ['arn:aws:s3:::', !Ref 'KeyBucket', /enc_key]]
+          - Effect: Allow
+            Action:
+            - kms:Encrypt
+            Resource:
+            - '*'
+          - Effect: Allow
+            Action:
+            - logs:CreateLogGroup
+            - logs:CreateLogStream
+            - logs:PutLogEvents
+            Resource:
+            - arn:aws:logs:*:*:*
+    Metadata:
+      AWS::CloudFormation::Designer:
+        id: 97f9b0d1-59a1-4c3a-9071-d4266dfb6740
+  CreateSSHKeyLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: lambda_function.lambda_handler
+      MemorySize: '128'
+      Role: !GetAtt [CreateSSHKeyRole, Arn]
+      Runtime: python2.7
+      Timeout: '300'
+      Code:
+        S3Bucket: !FindInMap [LambdaBuckets, !Ref 'AWS::Region', Name]
+        S3Key: v1.0/CreateSSHKey.zip
+    Metadata:
+      AWS::CloudFormation::Designer:
+        id: 6854e4ee-5b0c-4fb8-a160-134c3117dc46
+  CreateSSHKey:
+    Type: AWS::CloudFormation::CustomResource
+    Version: '1.0'
+    Properties:
+      ServiceToken: !GetAtt [CreateSSHKeyLambda, Arn]
+      KeyBucket: !Ref 'KeyBucket'
+      Region: !Ref 'AWS::Region'
+      KMSKey: !Ref 'KMSKey'
+    Metadata:
+      AWS::CloudFormation::Designer:
+        id: cb9b9866-b8dc-4d63-8c0f-2ddc8ea74c72
+  DeleteBucketContentsRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service: lambda.amazonaws.com
+          Action: sts:AssumeRole
+      Path: /
+      Policies:
+      - PolicyName: git2cp-deletebucketcontents
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action:
+            - s3:*
+            Resource:
+            - !Join ['', ['arn:aws:s3:::', !Ref 'KeyBucket', /*]]
+            - !Join ['', ['arn:aws:s3:::', !Ref 'OutputBucket', /*]]
+            - !Join ['', ['arn:aws:s3:::', !Ref 'KeyBucket']]
+            - !Join ['', ['arn:aws:s3:::', !Ref 'OutputBucket']]
+          - Effect: Allow
+            Action:
+            - logs:CreateLogGroup
+            - logs:CreateLogStream
+            - logs:PutLogEvents
+            Resource:
+            - arn:aws:logs:*:*:*
+    Metadata:
+      AWS::CloudFormation::Designer:
+        id: f91ba1ed-e63d-4749-93e8-0d1b17aa2adf
+  DeleteBucketContentsLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: lambda_function.lambda_handler
+      MemorySize: '128'
+      Role: !GetAtt [DeleteBucketContentsRole, Arn]
+      Runtime: python2.7
+      Timeout: '300'
+      Code:
+        S3Bucket: !FindInMap [LambdaBuckets, !Ref 'AWS::Region', Name]
+        S3Key: v1.0/DeleteBucketContents.zip
+    Metadata:
+      AWS::CloudFormation::Designer:
+        id: a3596ba3-f36d-4774-aaf7-7cde3426b9e1
+  DeleteBucketContents:
+    Type: AWS::CloudFormation::CustomResource
+    Version: '1.0'
+    DependsOn:
+    - KeyBucket
+    - OutputBucket
+    Properties:
+      ServiceToken: !GetAtt [DeleteBucketContentsLambda, Arn]
+      KeyBucket: !Ref 'KeyBucket'
+      OutputBucket: !Ref 'OutputBucket'
+    Metadata:
+      AWS::CloudFormation::Designer:
+        id: 9b3173bb-0627-4c9a-ab38-f8b952df6794
+  GitPullRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service: lambda.amazonaws.com
+          Action: sts:AssumeRole
+      Path: /
+      Policies:
+      - PolicyName: git2cp-gitpull
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action:
+            - kms:Decrypt
+            Resource:
+            - '*'
+          - Effect: Allow
+            Action:
+            - s3:PutObject
+            Resource:
+            - !Join ['', ['arn:aws:s3:::', !Ref 'OutputBucket']]
+            - !Join ['', ['arn:aws:s3:::', !Ref 'OutputBucket', /*]]
+          - Effect: Allow
+            Action:
+            - s3:GetObject
+            Resource:
+            - !Join ['', ['arn:aws:s3:::', !Ref 'KeyBucket', /enc_key]]
+          - Effect: Allow
+            Action:
+            - logs:CreateLogGroup
+            - logs:CreateLogStream
+            - logs:PutLogEvents
+            Resource:
+            - arn:aws:logs:*:*:*
+    Metadata:
+      AWS::CloudFormation::Designer:
+        id: 326356aa-412d-4efa-a1cd-3f23e203a894
+  GitPullLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: lambda_function.lambda_handler
+      MemorySize: '128'
+      Role: !GetAtt [GitPullRole, Arn]
+      Runtime: python2.7
+      Timeout: '300'
+      Code:
+        S3Bucket: !FindInMap [LambdaBuckets, !Ref 'AWS::Region', Name]
+        S3Key: v1.0/GitPullS3.zip
+    Metadata:
+      AWS::CloudFormation::Designer:
+        id: 1b85c990-4413-4502-a8f7-693e70a42ec7
+  ZipDlRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+        - Sid: ''
+          Effect: Allow
+          Principal:
+            Service:
+            - lambda.amazonaws.com
+          Action: sts:AssumeRole
+      Path: /
+      Policies:
+      - PolicyName: git2cp-zipdl
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action:
+            - s3:PutObject
+            Resource:
+            - !Join ['', ['arn:aws:s3:::', !Ref 'OutputBucket']]
+            - !Join ['', ['arn:aws:s3:::', !Ref 'OutputBucket', /*]]
+          - Effect: Allow
+            Action:
+            - logs:CreateLogGroup
+            - logs:CreateLogStream
+            - logs:PutLogEvents
+            Resource:
+            - arn:aws:logs:*:*:*
+    Metadata:
+      AWS::CloudFormation::Designer:
+        id: 91161c33-fa9d-4f36-9523-f00ae474400a
+  ZipDlLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Role: !GetAtt [ZipDlRole, Arn]
+      Code:
+        S3Bucket: !FindInMap [LambdaBuckets, !Ref 'AWS::Region', Name]
+        S3Key: v1.0/ZipDl.zip
+      Runtime: python2.7
+      MemorySize: 128
+      Timeout: 30
+    Metadata:
+      AWS::CloudFormation::Designer:
+        id: 04b9bad4-4a9c-4cfd-8575-bee7a6466174
+  WebHookRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service: apigateway.amazonaws.com
+          Action: sts:AssumeRole
+      Path: /
+      ManagedPolicyArns:
+      - arn:aws:iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs
+      Policies:
+      - PolicyName: git2cp-webhook
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action:
+            - lambda:InvokeAsync
+            - lambda:InvokeFunction
+            Resource:
+            - !GetAtt [GitPullLambda, Arn]
+            - !GetAtt [ZipDlLambda, Arn]
+    Metadata:
+      AWS::CloudFormation::Designer:
+        id: 96e4ba03-b237-4d0d-ba8a-d1a45657db18
+  WebHookApi:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Body:
+        swagger: '2.0'
+        info:
+          version: '2016-07-26T07:34:38Z'
+          title: !Join ['', [G2CP-, !Ref 'AWS::StackName']]
+        schemes:
+        - https
+        paths:
+          /gitpull:
+            post:
+              consumes:
+              - application/json
+              produces:
+              - application/json
+              responses:
+                '200':
+                  description: 200 response
+                  schema:
+                    $ref: '#/definitions/Empty'
+              x-amazon-apigateway-integration:
+                type: aws
+                credentials: !GetAtt [WebHookRole, Arn]
+                responses:
+                  default:
+                    statusCode: '200'
+                requestParameters:
+                  integration.request.header.X-Amz-Invocation-Type: '''Event'''
+                passthroughBehavior: when_no_templates
+                httpMethod: POST
+                uri: !Join ['', ['arn:aws:apigateway:', !Ref 'AWS::Region', ':lambda:path//2015-03-31/functions/',
+                    !GetAtt [GitPullLambda, Arn], /invocations]]
+                requestTemplates:
+                  application/json: !Join ['', ['#set($allParams = $input.params())
+
+                        ', '{
+
+                        ', '"body-json" : $input.json(''$''),
+
+                        ', '"params" : {
+
+                        ', '#foreach($type in $allParams.keySet())
+
+                        ', '    #set($params = $allParams.get($type))
+
+                        ', '"$type" : {
+
+                        ', '    #foreach($paramName in $params.keySet())
+
+                        ', '    "$paramName" : "$util.escapeJavaScript($params.get($paramName))"
+
+                        ', '        #if($foreach.hasNext),#end
+
+                        ', '    #end
+
+                        ', '}
+
+                        ', '    #if($foreach.hasNext),#end
+
+                        ', '#end
+
+                        ', '},
+
+                        ', '"stage-variables" : {
+
+                        ', '#foreach($key in $stageVariables.keySet())
+
+                        ', '"$key" : "$util.escapeJavaScript($stageVariables.get($key))"
+
+                        ', '    #if($foreach.hasNext),#end
+
+                        ', '#end
+
+                        ', '},
+
+                        ', '"context" : {
+
+                        ', '    "account-id" : "$context.identity.accountId",
+
+                        ', '    "api-id" : "$context.apiId",
+
+                        ', '    "api-key" : "$context.identity.apiKey",
+
+                        ', '    "authorizer-principal-id" : "$context.authorizer.principalId",
+
+                        ', '    "caller" : "$context.identity.caller",
+
+                        ', '    "cognito-authentication-provider" : "$context.identity.cognitoAuthenticationProvider",
+
+                        ', '    "cognito-authentication-type" : "$context.identity.cognitoAuthenticationType",
+
+                        ', '    "cognito-identity-id" : "$context.identity.cognitoIdentityId",
+
+                        ', '    "cognito-identity-pool-id" : "$context.identity.cognitoIdentityPoolId",
+
+                        ', '    "http-method" : "$context.httpMethod",
+
+                        ', '    "stage" : "$context.stage",
+
+                        ', '    "source-ip" : "$context.identity.sourceIp",
+
+                        ', '    "user" : "$context.identity.user",
+
+                        ', '    "user-agent" : "$context.identity.userAgent",
+
+                        ', '    "user-arn" : "$context.identity.userArn",
+
+                        ', '    "request-id" : "$context.requestId",
+
+                        ', '    "resource-id" : "$context.resourceId",
+
+                        ', '    "resource-path" : "$context.resourcePath",
+
+                        ', '    "allowed-ips" : "$stageVariables.allowedips",
+
+                        ', '    "api-secrets" : "$stageVariables.apisecrets",
+
+                        ', '    "key-bucket" : "', !Ref 'KeyBucket', '",
+
+                        ', '    "output-bucket" : "$stageVariables.outputbucket",
+
+                        ', '    "public-key" : "', !Ref 'CreateSSHKey', '",
+
+                        ', '    "raw-body" : "$util.escapeJavaScript($input.body)"
+
+                        ', '    }
+
+                        ', '}']]
+          /zipdl:
+            post:
+              consumes:
+              - application/json
+              produces:
+              - application/json
+              responses:
+                '200':
+                  description: 200 response
+                  schema:
+                    $ref: '#/definitions/Empty'
+              x-amazon-apigateway-integration:
+                type: aws
+                credentials: !GetAtt [WebHookRole, Arn]
+                responses:
+                  default:
+                    statusCode: '200'
+                requestParameters:
+                  integration.request.header.X-Amz-Invocation-Type: '''Event'''
+                passthroughBehavior: when_no_templates
+                httpMethod: POST
+                uri: !Join ['', ['arn:aws:apigateway:', !Ref 'AWS::Region', ':lambda:path//2015-03-31/functions/',
+                    !GetAtt [ZipDlLambda, Arn], /invocations]]
+                requestTemplates:
+                  application/json: !Join ['', ['#set($allParams = $input.params())
+
+                        ', '{
+
+                        ', '"body-json" : $input.json(''$''),
+
+                        ', '"params" : {
+
+                        ', '#foreach($type in $allParams.keySet())
+
+                        ', '    #set($params = $allParams.get($type))
+
+                        ', '"$type" : {
+
+                        ', '    #foreach($paramName in $params.keySet())
+
+                        ', '    "$paramName" : "$util.escapeJavaScript($params.get($paramName))"
+
+                        ', '        #if($foreach.hasNext),#end
+
+                        ', '    #end
+
+                        ', '}
+
+                        ', '    #if($foreach.hasNext),#end
+
+                        ', '#end
+
+                        ', '},
+
+                        ', '"stage-variables" : {
+
+                        ', '#foreach($key in $stageVariables.keySet())
+
+                        ', '"$key" : "$util.escapeJavaScript($stageVariables.get($key))"
+
+                        ', '    #if($foreach.hasNext),#end
+
+                        ', '#end
+
+                        ', '},
+
+                        ', '"context" : {
+
+                        ', '    "account-id" : "$context.identity.accountId",
+
+                        ', '    "api-id" : "$context.apiId",
+
+                        ', '    "api-key" : "$context.identity.apiKey",
+
+                        ', '    "authorizer-principal-id" : "$context.authorizer.principalId",
+
+                        ', '    "caller" : "$context.identity.caller",
+
+                        ', '    "cognito-authentication-provider" : "$context.identity.cognitoAuthenticationProvider",
+
+                        ', '    "cognito-authentication-type" : "$context.identity.cognitoAuthenticationType",
+
+                        ', '    "cognito-identity-id" : "$context.identity.cognitoIdentityId",
+
+                        ', '    "cognito-identity-pool-id" : "$context.identity.cognitoIdentityPoolId",
+
+                        ', '    "http-method" : "$context.httpMethod",
+
+                        ', '    "stage" : "$context.stage",
+
+                        ', '    "source-ip" : "$context.identity.sourceIp",
+
+                        ', '    "user" : "$context.identity.user",
+
+                        ', '    "user-agent" : "$context.identity.userAgent",
+
+                        ', '    "user-arn" : "$context.identity.userArn",
+
+                        ', '    "request-id" : "$context.requestId",
+
+                        ', '    "resource-id" : "$context.resourceId",
+
+                        ', '    "resource-path" : "$context.resourcePath",
+
+                        ', '    "oauth-key" : "$stageVariables.oauthkey",
+
+                        ', '    "oauth-secret" : "$stageVariables.oauthsecret",
+
+                        ', '    "output-bucket" : "$stageVariables.outputbucket",
+
+                        ', '    "git-token" : "$stageVariables.gittoken"
+
+                        ', '    }
+
+                        ', '}']]
+        securityDefinitions:
+          sigv4:
+            type: apiKey
+            name: Authorization
+            in: header
+            x-amazon-apigateway-authtype: awsSigv4
+        definitions:
+          Empty:
+            type: object
+    Metadata:
+      AWS::CloudFormation::Designer:
+        id: 3e332380-9ce6-4062-8138-85df66921e79
+  WebHookApiDeployment:
+    Type: AWS::ApiGateway::Deployment
+    Properties:
+      RestApiId: !Ref 'WebHookApi'
+      StageName: DummyStage
+    Metadata:
+      AWS::CloudFormation::Designer:
+        id: 2682c94b-1100-4f6a-adcc-b0f3d86cd5f8
+  WebHookApiProdStage:
+    Type: AWS::ApiGateway::Stage
+    Properties:
+      DeploymentId: !Ref 'WebHookApiDeployment'
+      RestApiId: !Ref 'WebHookApi'
+      StageName: Prod
+      Variables:
+        outputbucket: !Ref 'OutputBucket'
+        allowedips: !If [UseAllowedIps, !Ref 'AllowedIps', !Ref 'AWS::NoValue']
+        apisecrets: !If [UseApiSecret, !Ref 'ApiSecret', !Ref 'AWS::NoValue']
+        gittoken: !If [UseGitToken, !Ref 'GitToken', !Ref 'AWS::NoValue']
+        oauthkey: !If [UseOauthKey, !Ref 'OauthKey', !Ref 'AWS::NoValue']
+        oauthsecret: !If [UseOauthSecret, !Ref 'OauthSecret', !Ref 'AWS::NoValue']
+    Metadata:
+      AWS::CloudFormation::Designer:
+        id: 949e4fd0-d5f0-48ee-8e77-2df917562d92
+Outputs:
+  PublicSSHKey:
+    Value: !Ref 'CreateSSHKey'
+  GitPullWebHookApi:
+    Value: !Join ['', [' https://', !Ref 'WebHookApi', .execute-api., !Ref 'AWS::Region',
+        .amazonaws.com/, !Ref 'WebHookApiProdStage', /gitpull]]
+  ZipDownloadWebHookApi:
+    Value: !Join ['', [' https://', !Ref 'WebHookApi', .execute-api., !Ref 'AWS::Region',
+        .amazonaws.com/, !Ref 'WebHookApiProdStage', /zipdl]]
+  OutputBucketName:
+    Value: !Ref 'OutputBucket'
